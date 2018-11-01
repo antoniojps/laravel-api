@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\Question;
 use Illuminate\Http\Request;
+use App\Http\Resources\QuestionResource;
 use App\Http\Resources\AnswerResource;
 use App\Http\Resources\AnswersResource;
+use App\Http\Requests\AnswerRequest;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class AnswerController extends Controller
 {
@@ -25,9 +30,26 @@ class AnswerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnswerRequest $request)
     {
-        //
+        try {
+            $validatedData = $request->validated();
+
+            $answer = new Answer();
+            $answer->body = $request->body;
+            $answer->question_id = $request->question_id;
+
+            $question = Question::findOrFail($request->question_id);
+            $question->answers()->save($answer);
+
+            QuestionResource::withoutWrapping();
+            return new QuestionResource($question);
+        } catch (\Exception $e) {
+            return response([
+                'errors' => $e->getMessage(),
+                'status' => 404,
+            ], 404);
+        }
     }
 
     /**

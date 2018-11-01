@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Resources\QuestionResource;
 use App\Http\Resources\QuestionsResource;
-use App\Http\Requests\StoreQuestion;
+use App\Http\Requests\QuestionRequest;
 
 class QuestionController extends Controller
 {
@@ -27,7 +27,7 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreQuestion $request)
+    public function store(QuestionRequest $request)
     {
         $validatedData = $request->validated();
 
@@ -56,7 +56,7 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreQuestion $request, Question $question)
+    public function update(QuestionRequest $request, Question $question)
     {
         $validatedData = $request->validated();
 
