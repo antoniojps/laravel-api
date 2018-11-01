@@ -1,62 +1,39 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+---
+title: API Reference
 
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/all.js"></script>
+language_tabs:
+- bash
+- javascript
 
+includes:
 
-          <script>
-        $(function() {
-            setupLanguages(["bash","javascript"]);
-        });
-      </script>
-      </head>
+search: true
 
-  <body class="">
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <img src="images/navbar.png" />
-      </span>
-    </a>
-    <div class="tocify-wrapper">
-        <img src="images/logo.png" />
-                    <div class="lang-selector">
-                                  <a href="#" data-language-name="bash">bash</a>
-                                  <a href="#" data-language-name="javascript">javascript</a>
-                            </div>
-                            <div class="search">
-              <input type="text" class="search" id="input-search" placeholder="Search">
-            </div>
-            <ul class="search-results"></ul>
-              <div id="toc">
-      </div>
-                    <ul class="toc-footer">
-                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
-                            </ul>
-            </div>
-    <div class="page-wrapper">
-      <div class="dark-box"></div>
-      <div class="content">
-          <!-- START_INFO -->
-<h1>Info</h1>
-<p>Welcome to the generated API reference.
-<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+toc_footers:
+- <a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a>
+---
+<!-- START_INFO -->
+# Info
+
+Welcome to the generated API reference.
+[Get Postman Collection](http://localhost/docs/collection.json)
+
 <!-- END_INFO -->
-<h1>general</h1>
+
+#general
 <!-- START_de9212b4bd813e07f73b53cc3bd13088 -->
-<h2>Query questions</h2>
-<p>Get questions paginated alongside answers</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET -G "http://localhost/api/questions" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Query questions
+
+Get questions paginated alongside answers
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/questions" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/questions",
@@ -67,11 +44,13 @@
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "data": [
         {
             "type": "questions",
@@ -629,19 +608,29 @@ $.ajax(settings).done(function (response) {
         "to": 15,
         "total": 20
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/questions</code></p>
+}
+```
+
+### HTTP Request
+`GET api/questions`
+
+
 <!-- END_de9212b4bd813e07f73b53cc3bd13088 -->
+
 <!-- START_c523dae70f6c4b21420696974da0faea -->
-<h2>Add question</h2>
-<p>Add a new question</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST "http://localhost/api/questions"     -d "title"="Why is this not working?" \
-    -d "description"="Ive done this and that this is still not working, what am I doint wrong?" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Add question
+
+Add a new question
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/questions"     -d "title"="Why is this not working?" \
+    -d "description"="Ive done this and that this is still not working, what am I doint wrong?" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/questions",
@@ -656,11 +645,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "questions",
     "id": "21",
     "attributes": {
@@ -679,43 +670,34 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/laravel.test\/api\/questions\/21"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/questions</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>string</td>
-<td>required</td>
-<td>The question.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>optional</td>
-<td>Question explanation.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`POST api/questions`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The question.
+    description | string |  optional  | Question explanation.
+
 <!-- END_c523dae70f6c4b21420696974da0faea -->
+
 <!-- START_f605dcf2ca92a58323db87f649ac1dae -->
-<h2>Query question</h2>
-<p>Query a question by Id</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET -G "http://localhost/api/questions/{question}" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Query question
+
+Query a question by Id
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/questions/{question}" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/questions/{question}",
@@ -726,11 +708,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "questions",
     "id": "1",
     "attributes": {
@@ -759,36 +743,34 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/localhost\/api\/questions\/1"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/questions/{question}</code></p>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>question</td>
-<td>optional</td>
-<td>int required The questions id.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`GET api/questions/{question}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
 <!-- END_f605dcf2ca92a58323db87f649ac1dae -->
+
 <!-- START_1bebccad423fb430073b434655c9df9e -->
-<h2>Update question</h2>
-<p>Update a question by Id</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT "http://localhost/api/questions/{question}"     -d "title"="Why is this not working?" \
-    -d "description"="Ive done this and that this is still not working, what am I doint wrong?" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Update question
+
+Update a question by Id
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/questions/{question}"     -d "title"="Why is this not working?" \
+    -d "description"="Ive done this and that this is still not working, what am I doint wrong?" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/questions/{question}",
@@ -803,11 +785,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "questions",
     "id": "21",
     "attributes": {
@@ -826,61 +810,41 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/laravel.test\/api\/questions\/21"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT api/questions/{question}</code></p>
-<p><code>PATCH api/questions/{question}</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>string</td>
-<td>required</td>
-<td>The question.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>optional</td>
-<td>Question explanation.</td>
-</tr>
-</tbody>
-</table>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>question</td>
-<td>optional</td>
-<td>int required The questions id.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`PUT api/questions/{question}`
+
+`PATCH api/questions/{question}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The question.
+    description | string |  optional  | Question explanation.
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
 <!-- END_1bebccad423fb430073b434655c9df9e -->
+
 <!-- START_cb5299e7a9fce3c463c5f52278e9fae0 -->
-<h2>Delete question</h2>
-<p>Soft deletes the question adding a &quot;deleted_at&quot; value</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE "http://localhost/api/questions/{question}" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Delete question
+
+Soft deletes the question adding a "deleted_at" value
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/questions/{question}" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/questions/{question}",
@@ -891,11 +855,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "questions",
     "id": "21",
     "attributes": {
@@ -914,35 +880,33 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/laravel.test\/api\/questions\/21"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE api/questions/{question}</code></p>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>question</td>
-<td>optional</td>
-<td>int required The questions id.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`DELETE api/questions/{question}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
 <!-- END_cb5299e7a9fce3c463c5f52278e9fae0 -->
+
 <!-- START_ffba39ee142f0e0f3df7d5ab3a06906b -->
-<h2>Query answers</h2>
-<p>Get listing of answers paginated</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET -G "http://localhost/api/answers" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Query answers
+
+Get listing of answers paginated
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/answers" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/answers",
@@ -953,11 +917,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "data": {
         "data": [
             {
@@ -1128,19 +1094,29 @@ $.ajax(settings).done(function (response) {
         "to": 15,
         "total": 59
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/answers</code></p>
+}
+```
+
+### HTTP Request
+`GET api/answers`
+
+
 <!-- END_ffba39ee142f0e0f3df7d5ab3a06906b -->
+
 <!-- START_aeead3cf8b0b117eaa7b8e3c88c7a800 -->
-<h2>Add answer</h2>
-<p>Add a new answer to a question</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST "http://localhost/api/answers"     -d "question_id"="21" \
-    -d "body"="Its not working because you forgot the question_id parameter!" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Add answer
+
+Add a new answer to a question
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/answers"     -d "question_id"="21" \
+    -d "body"="Its not working because you forgot the question_id parameter!" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/answers",
@@ -1155,11 +1131,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "questions",
     "id": "24",
     "attributes": {
@@ -1189,43 +1167,34 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/laravel.test\/api\/questions\/24"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/answers</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>question_id</td>
-<td>integer</td>
-<td>required</td>
-<td>The question id.</td>
-</tr>
-<tr>
-<td>body</td>
-<td>string</td>
-<td>optional</td>
-<td>Answer.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`POST api/answers`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    question_id | integer |  required  | The question id.
+    body | string |  optional  | Answer.
+
 <!-- END_aeead3cf8b0b117eaa7b8e3c88c7a800 -->
+
 <!-- START_2b390d72350a482fc19b0e8670afe9c4 -->
-<h2>Query answer</h2>
-<p>Query an answer by Id</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET -G "http://localhost/api/answers/{answer}" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Query answer
+
+Query an answer by Id
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/answers/{answer}" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/answers/{answer}",
@@ -1236,11 +1205,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "answers",
     "id": "1",
     "attributes": {
@@ -1249,35 +1220,33 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/localhost\/api\/answers\/1"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/answers/{answer}</code></p>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>answer</td>
-<td>optional</td>
-<td>int required The answer id.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`GET api/answers/{answer}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    answer |  optional  | int required The answer id.
+
 <!-- END_2b390d72350a482fc19b0e8670afe9c4 -->
+
 <!-- START_09fd9e8518c9b604d36eb4242512829d -->
-<h2>Update answer</h2>
-<p>Update an answer by Id</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT "http://localhost/api/answers/{answer}"     -d "body"="Its not working because you forgot the question_id parameter!" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Update answer
+
+Update an answer by Id
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/answers/{answer}"     -d "body"="Its not working because you forgot the question_id parameter!" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/answers/{answer}",
@@ -1291,11 +1260,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "answers",
     "id": "20",
     "attributes": {
@@ -1304,55 +1275,40 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/laravel.test\/api\/answers\/20"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT api/answers/{answer}</code></p>
-<p><code>PATCH api/answers/{answer}</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>body</td>
-<td>string</td>
-<td>optional</td>
-<td>Answer.</td>
-</tr>
-</tbody>
-</table>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>answer</td>
-<td>optional</td>
-<td>int required The answers id.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`PUT api/answers/{answer}`
+
+`PATCH api/answers/{answer}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    body | string |  optional  | Answer.
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    answer |  optional  | int required The answers id.
+
 <!-- END_09fd9e8518c9b604d36eb4242512829d -->
+
 <!-- START_c04468caefc10a779cf1380faeb8d92c -->
-<h2>Delete answer</h2>
-<p>Soft deletes the answer adding a &quot;deleted_at&quot;, the deleted answer is sent.</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE "http://localhost/api/answers/{answer}" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Delete answer
+
+Soft deletes the answer adding a "deleted_at", the deleted answer is sent.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/answers/{answer}" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/answers/{answer}",
@@ -1363,11 +1319,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "type": "answers",
     "id": "30",
     "attributes": {
@@ -1376,35 +1334,33 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/laravel.test\/api\/answers\/68"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE api/answers/{answer}</code></p>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>answer</td>
-<td>optional</td>
-<td>int required The answers id.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`DELETE api/answers/{answer}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    answer |  optional  | int required The answers id.
+
 <!-- END_c04468caefc10a779cf1380faeb8d92c -->
+
 <!-- START_c62321bd8a21519aef8cb5053dbcda11 -->
-<h2>Query answers by question</h2>
-<p>Get all answers for a specific question</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET -G "http://localhost/api/questions/{question}/answers" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Query answers by question
+
+Get all answers for a specific question
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/questions/{question}/answers" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/questions/{question}/answers",
@@ -1415,11 +1371,13 @@ $.ajax(settings).done(function (response) {
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">{
+});
+```
+
+> Example response:
+
+```json
+{
     "data": [
         {
             "type": "answers",
@@ -1455,43 +1413,42 @@ $.ajax(settings).done(function (response) {
     "links": {
         "self": "http:\/\/laravel.test\/api\/answers"
     }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/questions/{question}/answers</code></p>
-<h4>Query Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>question</td>
-<td>optional</td>
-<td>int required The questions id.</td>
-</tr>
-</tbody>
-</table>
+}
+```
+
+### HTTP Request
+`GET api/questions/{question}/answers`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
 <!-- END_c62321bd8a21519aef8cb5053dbcda11 -->
+
 <!-- START_6e7e2bdf41dacf38a5c6768ef817e8b6 -->
-<h2>Upload picture</h2>
-<p>Very basic picture upload</p>
-<p>Image gets replaced always, and is accessible at 'storage/uploadedPic.png'
-Png only (Client side verification)</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST "http://localhost/api/upload"     -d "picture"="u4XflkUednhkkwb1" </code></pre>
-<pre><code class="language-javascript">var settings = {
+## Upload picture
+
+Very basic picture upload
+
+Image gets replaced always, and is accessible at 'storage/uploadedPic.png'
+Png only (Client side verification)
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/upload"     -d "picture"="Vr3wGThvyRa2N7OQ" 
+```
+
+```javascript
+var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://localhost/api/upload",
     "method": "POST",
     "data": {
-        "picture": "u4XflkUednhkkwb1"
+        "picture": "Vr3wGThvyRa2N7OQ"
     },
     "headers": {
     }
@@ -1499,35 +1456,19 @@ Png only (Client side verification)</p>
 
 $.ajax(settings).done(function (response) {
     console.log(response);
-});</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/upload</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>picture</td>
-<td>multipart/form-data</td>
-<td>optional</td>
-</tr>
-</tbody>
-</table>
+});
+```
+
+
+### HTTP Request
+`POST api/upload`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    picture | multipart/form-data |  optional  | 
+
 <!-- END_6e7e2bdf41dacf38a5c6768ef817e8b6 -->
-      </div>
-      <div class="dark-box">
-                        <div class="lang-selector">
-                                    <a href="#" data-language-name="bash">bash</a>
-                                    <a href="#" data-language-name="javascript">javascript</a>
-                              </div>
-                </div>
-    </div>
-  </body>
-</html>
+
+

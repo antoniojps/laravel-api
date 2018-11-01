@@ -1438,7 +1438,7 @@ Png only (Client side verification)
 > Example request:
 
 ```bash
-curl -X POST "http://localhost/api/upload"     -d "picture"="Vr3wGThvyRa2N7OQ" 
+curl -X POST "http://localhost/api/upload"     -d "picture"="u4XflkUednhkkwb1" 
 ```
 
 ```javascript
@@ -1448,7 +1448,7 @@ var settings = {
     "url": "http://localhost/api/upload",
     "method": "POST",
     "data": {
-        "picture": "Vr3wGThvyRa2N7OQ"
+        "picture": "u4XflkUednhkkwb1"
     },
     "headers": {
     }
