@@ -35,3 +35,5 @@ Route::get(
         'as' => 'questions.answers',
     ]
 );
+
+Route::post('/upload', 'UploadController@postUpload')->name('upload');

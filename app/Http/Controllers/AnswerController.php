@@ -59,15 +59,8 @@ class AnswerController extends Controller
      */
     public function show(Answer $answer)
     {
-        try {
-            AnswerResource::withoutWrapping();
-            return new AnswerResource($answer);
-        } catch (\Exception $e) {
-            return response([
-                'errors' => $e->getMessage(),
-                'status' => 404,
-            ], 404);
-        }
+        AnswerResource::withoutWrapping();
+        return new AnswerResource($answer);
     }
 
     /**
