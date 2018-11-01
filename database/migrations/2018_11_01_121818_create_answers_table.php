@@ -18,8 +18,12 @@ class CreateAnswersTable extends Migration
             $table->text('body');
             $table->integer('question_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
 
-            $table->foreign('question_id')->references('id')->on('questions');
+            $table
+                ->foreign('question_id')
+                ->references('id')
+                ->on('questions');
         });
     }
 

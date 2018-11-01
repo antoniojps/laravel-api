@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Resources\QuestionResource;
 use App\Http\Resources\QuestionsResource;
+use App\Http\Requests\StoreQuestion;
 
 class QuestionController extends Controller
 {
@@ -26,9 +27,14 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreQuestion $request)
     {
-        //
+        $validatedData = $request->validated();
+
+        $question = Question::create($validatedData);
+
+        QuestionResource::withoutWrapping();
+        return new QuestionResource($question);
     }
 
     /**
@@ -50,9 +56,14 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(StoreQuestion $request, Question $question)
     {
-        //
+        $validatedData = $request->validated();
+
+        $question->update($validatedData);
+
+        QuestionResource::withoutWrapping();
+        return new QuestionResource($question);
     }
 
     /**
@@ -63,6 +74,9 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
+
+        QuestionResource::withoutWrapping();
+        return new QuestionResource($question);
     }
 }
