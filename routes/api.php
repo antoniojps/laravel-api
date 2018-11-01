@@ -19,3 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('questions', 'QuestionController');
 Route::apiResource('answers', 'AnswerController');
+
+Route::get(
+    'questions/{question}/relationships/answers',
+    [
+        'uses' => 'QuestionRelationshipController@answers',
+        'as' => 'questions.relationships.answers',
+    ]
+);

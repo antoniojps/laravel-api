@@ -19,7 +19,7 @@ class QuestionAnswersRelationshipResource extends ResourceCollection
         return [
             'data'  => AnswerIdentifierResource::collection($this->collection),
             'links' => [
-                // 'self'    => route('questions.relationships.answers', ['question' => $question->id]),
+                'self'    => route('questions.relationships.answers', ['question' => $question->id]),
                 // 'related' => route('questions.answers', ['question' => $question->id]),
             ],
         ];
