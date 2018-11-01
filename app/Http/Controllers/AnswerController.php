@@ -8,14 +8,15 @@ use Illuminate\Http\Request;
 use App\Http\Resources\QuestionResource;
 use App\Http\Resources\AnswerResource;
 use App\Http\Resources\AnswersResource;
-use App\Http\Requests\AnswerRequest;
+use App\Http\Requests\AnswerStoreRequest;
+use App\Http\Requests\AnswerUpdateRequest;
 use Symfony\Component\HttpFoundation\Response;
 
 
 class AnswerController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of paginated answers.
      *
      * @return \Illuminate\Http\Response
      */
@@ -25,16 +26,14 @@ class AnswerController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created answer in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AnswerRequest $request)
+    public function store(AnswerStoreRequest $request)
     {
         try {
-            $validatedData = $request->validated();
-
             $answer = new Answer();
             $answer->body = $request->body;
             $answer->question_id = $request->question_id;
@@ -53,15 +52,22 @@ class AnswerController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified answer.
      *
      * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
     public function show(Answer $answer)
     {
-        AnswerResource::withoutWrapping();
-        return new AnswerResource($answer);
+        try {
+            AnswerResource::withoutWrapping();
+            return new AnswerResource($answer);
+        } catch (\Exception $e) {
+            return response([
+                'errors' => $e->getMessage(),
+                'status' => 404,
+            ], 404);
+        }
     }
 
     /**
@@ -71,19 +77,34 @@ class AnswerController extends Controller
      * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Answer $answer)
+    public function update(AnswerUpdateRequest $request, Answer $answer)
     {
-        //
+        try {
+        $validatedData = $request->validated();
+
+        $answer->update($validatedData);
+
+        AnswerResource::withoutWrapping();
+        return new AnswerResource($answer);
+        } catch (\Exception $e) {
+            return response([
+                'errors' => $e->getMessage(),
+                'status' => 404,
+            ], 404);
+        }
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove an answer.
      *
      * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
     public function destroy(Answer $answer)
     {
-        //
+        $answer->delete();
+
+        AnswerResource::withoutWrapping();
+        return new AnswerResource($answer);
     }
 }
