@@ -27,3 +27,11 @@ Route::get(
         'as' => 'questions.relationships.answers',
     ]
 );
+
+Route::get(
+    'questions/{question}/answers',
+    [
+        'uses' => 'QuestionRelationshipController@answers',
+        'as' => 'questions.answers',
+    ]
+);
