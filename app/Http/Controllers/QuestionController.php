@@ -12,21 +12,46 @@ use App\Http\Requests\QuestionRequest;
 class QuestionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Query questions
      *
-     * @return \Illuminate\Http\Response
+     * Get questions paginated alongside answers
+     *
      */
+
     public function index()
     {
         return new QuestionsResource(Question::with(['answers'])->paginate());
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Add question
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+     * Add a new question
+     *
+     * @bodyParam title string required The question. Example: Why is this not working?
+     * @bodyParam description string Question explanation. Example: Ive done this and that this is still not working, what am I doint wrong?
+     *
+     * @response {
+        "type": "questions",
+        "id": "21",
+        "attributes": {
+            "title": "Será que está tudo a funcionar?",
+            "description": "Descriçao aqui"
+        },
+        "relationships": {
+            "answers": {
+                "data": [],
+                "links": {
+                    "self": "http://laravel.test/api/questions/21/relationships/answers",
+                    "related": "http://laravel.test/api/questions/21/answers"
+                }
+            }
+        },
+        "links": {
+            "self": "http://laravel.test/api/questions/21"
+        }
+    }
+    */
     public function store(QuestionRequest $request)
     {
         $validatedData = $request->validated();
@@ -38,11 +63,13 @@ class QuestionController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Query question
      *
-     * @param  \App\Question  $question
-     * @return \Illuminate\Http\Response
-     */
+     * Query a question by Id
+     *
+     *
+     * @queryParam question int required The questions id. Example: 10
+    */
     public function show(Question $question)
     {
         QuestionResource::withoutWrapping();
@@ -50,11 +77,34 @@ class QuestionController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update question
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Question  $question
-     * @return \Illuminate\Http\Response
+     * Update a question by Id
+     *
+     *
+     * @queryParam question int required The questions id. Example: 20
+     * @bodyParam title string required The question. Example: Why is this not working?
+     * @bodyParam description string Question explanation. Example: Ive done this and that this is still not working, what am I doint wrong?
+     * @response {
+        "type": "questions",
+        "id": "21",
+        "attributes": {
+            "title": "Será que está tudo a funcionar?",
+            "description": "Descriçao atualizada"
+        },
+        "relationships": {
+            "answers": {
+                "data": [],
+                "links": {
+                    "self": "http://laravel.test/api/questions/21/relationships/answers",
+                    "related": "http://laravel.test/api/questions/21/answers"
+                }
+            }
+        },
+        "links": {
+            "self": "http://laravel.test/api/questions/21"
+        }
+    }
      */
     public function update(QuestionRequest $request, Question $question)
     {
@@ -67,10 +117,31 @@ class QuestionController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete question
      *
-     * @param  \App\Question  $question
-     * @return \Illuminate\Http\Response
+     * Soft deletes the question adding a "deleted_at" value
+     *
+     * @queryParam question int required The questions id. Example: 20
+     * @response {
+        "type": "questions",
+        "id": "21",
+        "attributes": {
+            "title": "Será que está tudo a funcionar?",
+            "description": "Descriçao atualizada"
+        },
+        "relationships": {
+            "answers": {
+                "data": [],
+                "links": {
+                    "self": "http://laravel.test/api/questions/21/relationships/answers",
+                    "related": "http://laravel.test/api/questions/21/answers"
+                }
+            }
+        },
+        "links": {
+            "self": "http://laravel.test/api/questions/21"
+        }
+    }
      */
     public function destroy(Question $question)
     {

@@ -16,9 +16,10 @@ use Symfony\Component\HttpFoundation\Response;
 class AnswerController extends Controller
 {
     /**
-     * Display a listing of paginated answers.
+     * Query answers
      *
-     * @return \Illuminate\Http\Response
+     * Get listing of answers paginated
+     *
      */
     public function index()
     {
@@ -26,11 +27,45 @@ class AnswerController extends Controller
     }
 
     /**
-     * Store a newly created answer in storage.
+     * Add answer
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+     * Add a new answer to a question
+     *
+     * @bodyParam question_id int required The question id. Example: 21
+     * @bodyParam body string Answer. Example: Its not working because you forgot the question_id parameter!
+     *
+     * @response {
+        "type": "questions",
+        "id": "24",
+        "attributes": {
+            "title": "Será que está tudo a funcionar?",
+            "description": "Descriçao atualizada"
+        },
+        "relationships": {
+            "answers": {
+                "data": [
+                    {
+                        "type": "answers",
+                        "id": "67",
+                        "body": "Sim, parece estár tudo a funcionar!"
+                    },
+                    {
+                        "type": "answers",
+                        "id": "68",
+                        "body": "Em principio sim!"
+                    }
+                ],
+                "links": {
+                    "self": "http://laravel.test/api/questions/24/relationships/answers",
+                    "related": "http://laravel.test/api/questions/24/answers"
+                }
+            }
+        },
+        "links": {
+            "self": "http://laravel.test/api/questions/24"
+        }
+    }
+    */
     public function store(AnswerStoreRequest $request)
     {
         try {
@@ -52,11 +87,13 @@ class AnswerController extends Controller
     }
 
     /**
-     * Display the specified answer.
+     * Query answer
      *
-     * @param  \App\Answer  $answer
-     * @return \Illuminate\Http\Response
-     */
+     * Query an answer by Id
+     *
+     *
+     * @queryParam answer int required The answer id. Example: 30
+    */
     public function show(Answer $answer)
     {
         AnswerResource::withoutWrapping();
@@ -64,12 +101,24 @@ class AnswerController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update answer
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Answer  $answer
-     * @return \Illuminate\Http\Response
-     */
+     * Update an answer by Id
+     *
+     *
+     * @queryParam answer int required The answers id. Example: 30
+     * @bodyParam body string Answer. Example: Its not working because you forgot the question_id parameter!
+     * @response {
+        "type": "answers",
+        "id": "20",
+        "attributes": {
+            "body": "Esqueceste-te do ponto e virgula!"
+        },
+        "links": {
+            "self": "http://laravel.test/api/answers/20"
+        }
+    }
+    */
     public function update(AnswerUpdateRequest $request, Answer $answer)
     {
         try {
@@ -88,10 +137,21 @@ class AnswerController extends Controller
     }
 
     /**
-     * Remove an answer.
+     * Delete answer
      *
-     * @param  \App\Answer  $answer
-     * @return \Illuminate\Http\Response
+     * Soft deletes the answer adding a "deleted_at", the deleted answer is sent.
+     *
+     * @queryParam answer int required The answers id. Example: 30
+     * @response {
+        "type": "answers",
+        "id": "30",
+        "attributes": {
+            "body": "Afinal, não sei bem!"
+        },
+        "links": {
+            "self": "http://laravel.test/api/answers/68"
+        }
+    }
      */
     public function destroy(Answer $answer)
     {

@@ -21,14 +21,6 @@ Route::apiResource('questions', 'QuestionController');
 Route::apiResource('answers', 'AnswerController');
 
 Route::get(
-    'questions/{question}/relationships/answers',
-    [
-        'uses' => 'QuestionRelationshipController@answers',
-        'as' => 'questions.relationships.answers',
-    ]
-);
-
-Route::get(
     'questions/{question}/answers',
     [
         'uses' => 'QuestionRelationshipController@answers',

@@ -1,0 +1,1474 @@
+---
+title: API Reference
+
+language_tabs:
+- bash
+- javascript
+
+includes:
+
+search: true
+
+toc_footers:
+- <a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a>
+---
+<!-- START_INFO -->
+# Info
+
+Welcome to the generated API reference.
+[Get Postman Collection](http://localhost/docs/collection.json)
+
+<!-- END_INFO -->
+
+#general
+<!-- START_de9212b4bd813e07f73b53cc3bd13088 -->
+## Query questions
+
+Get questions paginated alongside answers
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/questions" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/questions",
+    "method": "GET",
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "data": [
+        {
+            "type": "questions",
+            "id": "1",
+            "attributes": {
+                "title": "Aut rerum numquam excepturi nam. Voluptas qui alias voluptatum blanditiis et. Expedita et nam repudiandae ipsa perspiciatis. Fuga tempore voluptas doloribus reiciendis?",
+                "description": "Fuga ut velit et autem. Qui fugit quo doloribus molestias vero et. Quisquam autem fugit dicta in doloremque ipsum explicabo. Iste sit delectus qui deleniti est. Occaecati accusantium minima sit pariatur. Ut sequi quaerat velit placeat quae reiciendis. Cupiditate ea ipsum aperiam amet magni repellendus. Molestias autem quasi vel repellendus eos autem ut qui. Odio vero est dolor dignissimos earum."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "11",
+                            "body": "Dolores inventore consequatur quo. Dolorum libero cupiditate iste labore quae earum. Rerum et amet in."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "30",
+                            "body": "Velit accusamus mollitia voluptatum iste eos. Qui et eum beatae eum dolores eum qui quisquam. Nihil omnis odio saepe itaque sint et. Cum tenetur labore est molestiae et beatae."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/1\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/1"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "2",
+            "attributes": {
+                "title": "Suscipit porro sed est consequatur voluptatibus earum libero. Quia earum accusamus reprehenderit eos. Illo debitis impedit quidem porro placeat sit ad?",
+                "description": "Consequatur nostrum laudantium aliquam vel doloribus delectus. Eum est quibusdam voluptatem. Ducimus numquam necessitatibus earum modi. Sapiente impedit cum aut. Non dolore ab quasi veniam. Placeat ipsum et voluptatem. Vero quia quo non eum excepturi quod est. Voluptas ad consequatur quidem aut accusantium et. Repudiandae eos possimus nulla adipisci minima ut aut."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "32",
+                            "body": "Quae velit delectus voluptatum ea dolorem. Iste quidem consequuntur deserunt aut. Odio tenetur qui deserunt odio quibusdam. Voluptatem ex repellat et eos."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "35",
+                            "body": "Et sunt et tempore enim nulla quibusdam ut. Sint perferendis qui reprehenderit inventore optio facilis."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/2\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/2"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "3",
+            "attributes": {
+                "title": "Dicta doloribus blanditiis amet aut ducimus nam. Consectetur et expedita ut minus iure eum maxime. Rerum itaque ut sint aut. Rerum accusantium placeat ut et qui et qui?",
+                "description": "Corporis nulla occaecati eum voluptatibus voluptas repellat officia. Et doloremque quos consequatur qui dolorem nemo. Fugit dicta aut sed est et cumque qui. At in repellat veritatis magni blanditiis consectetur. Et est id asperiores accusantium consequatur. Saepe atque soluta voluptatem nostrum inventore vel."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "3",
+                            "body": "Velit velit perferendis qui. Harum iure deserunt sequi necessitatibus. Soluta fuga nobis aliquid et quam nihil totam. Voluptatem at laudantium et quidem. Sunt qui maiores voluptatem consequatur."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "4",
+                            "body": "Eligendi delectus eius dolor laudantium est quia veritatis. Aut dolores aliquam pariatur minima. Ipsa ad ea et optio aut cumque."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "53",
+                            "body": "Velit aut sit soluta et odit vel cum. Tempore incidunt sed non. Rerum et autem ut minima possimus quaerat. Ducimus sunt aliquid odit."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/3\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/3"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "4",
+            "attributes": {
+                "title": "Inventore et illum nisi similique et. Et sed ut id sunt. Error labore omnis cumque et?",
+                "description": "Blanditiis porro quis culpa voluptatem voluptas. Temporibus qui velit explicabo et quasi explicabo. Blanditiis rerum ut cum enim sed ut. Officia voluptate rerum non necessitatibus a saepe. Recusandae placeat facilis necessitatibus quibusdam perspiciatis. Voluptatem molestiae odit eveniet. Minima sit ex blanditiis quisquam qui beatae."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "12",
+                            "body": "Nostrum dolor repellendus accusantium laudantium aut quos. Molestiae quisquam quam quasi ipsum iure aliquam facilis. Et excepturi illo id voluptatem."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "41",
+                            "body": "Aliquam inventore harum sequi autem. Eum repellat aliquid voluptatem. Quas magnam est ut aliquam fugiat et repudiandae."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/4\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/4"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "5",
+            "attributes": {
+                "title": "Tempora vitae ex eligendi quaerat enim. Ea voluptatum eaque maiores est perspiciatis corporis et. Et et et sed voluptatum voluptatem aut suscipit?",
+                "description": "Repudiandae libero aut molestiae ea minus fugit. Accusantium minima eos unde voluptatum ipsum molestiae. Aliquid voluptates voluptatem quod in mollitia eligendi molestiae. Totam accusamus eius totam fugiat blanditiis id. Quo amet aut dolor esse in. Rem ut ea est nobis consectetur delectus veritatis delectus. Porro iusto provident reprehenderit in. Ducimus harum cupiditate beatae ipsum natus."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "7",
+                            "body": "Omnis sequi cumque voluptatum quidem non dignissimos sed ab. Dolorum vel delectus ut fuga quasi earum. Numquam error ratione eveniet a ab magni quibusdam."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "37",
+                            "body": "Sit eos ut possimus voluptas ut. Aut quis est reprehenderit minus quia odit quo. Consequatur mollitia et vel sed non error quam."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "46",
+                            "body": "Corrupti repudiandae maxime quaerat est recusandae nisi. Animi illum voluptates ut quis inventore. Ut sit aperiam consequatur eum doloribus nemo assumenda quisquam. Est et mollitia laborum quae illo."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/5\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/5"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "6",
+            "attributes": {
+                "title": "Quis voluptas quia doloribus aliquam occaecati inventore. Est soluta dolorem omnis. Tempora non sit maxime et?",
+                "description": "Dignissimos quis et dicta qui ut perspiciatis repellat ea. Blanditiis non et nostrum ducimus. Doloremque dolores qui quo id nihil alias impedit. Consequatur deleniti id eius. Culpa dolorem magni nisi voluptate fuga facere qui. Voluptatibus et consequatur natus commodi. Fuga non quia earum. Veniam et et laudantium similique alias ipsa. Laborum voluptate sint illum. Optio atque alias error natus ab eum nulla. Atque blanditiis adipisci omnis autem id. Quas aspernatur dolor et unde."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "10",
+                            "body": "Vel culpa commodi quia iure et. Ut impedit quisquam vitae molestiae praesentium libero. Delectus ea corporis atque voluptates modi molestiae. Officia voluptatem et magni voluptatibus voluptates."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "15",
+                            "body": "Iusto iusto et ut qui dolorum qui. Aut fuga porro in quo. Ut sit aspernatur reiciendis."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "17",
+                            "body": "Et dignissimos beatae qui ipsum. Architecto et deleniti impedit rerum. Iure dolorem quia ut quia cupiditate aut suscipit."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "18",
+                            "body": "Architecto sint commodi tempore sit et optio reiciendis sit. Facere sint ut magni quia sapiente. Dolores corrupti neque exercitationem natus sed."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "40",
+                            "body": "Enim voluptates impedit sapiente magni eligendi error ad. Et est dolores harum. Debitis a ut ut qui eos eligendi dolores. Quibusdam pariatur nihil sint quod aliquam porro et."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "54",
+                            "body": "Neque commodi est accusamus error voluptas tempore et. Eius est provident nesciunt dolor. Voluptas tempora culpa libero."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "55",
+                            "body": "Asperiores voluptatem consequuntur ipsam animi. Ut libero qui praesentium voluptatem eum qui. Totam porro commodi vel quos. Non expedita placeat dolorum aut."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/6\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/6"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "7",
+            "attributes": {
+                "title": "Consectetur in ipsum consectetur ipsum. Aperiam rerum doloremque ex quo. Doloribus beatae fuga laudantium eius non sed asperiores. Enim ex quia modi adipisci repellendus nam ea?",
+                "description": "Ut sed sit vitae quasi. Voluptatum sapiente numquam qui excepturi sed. Commodi culpa voluptatibus et totam mollitia explicabo. Debitis est cumque hic sit culpa corporis. Animi consectetur consequatur qui architecto ut voluptas aspernatur. Dignissimos blanditiis voluptas ratione itaque incidunt. Adipisci ut repellendus nobis et doloremque perferendis. Cumque molestiae magnam modi. Distinctio perspiciatis omnis quia quasi sunt voluptates quaerat et. Totam eius et quasi deleniti est consequuntur."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "26",
+                            "body": "Et tempora repellat nihil labore iure. Neque nobis animi eum et minus quasi. Fugiat eligendi aut quaerat laboriosam libero ea. Officia molestiae quidem ut voluptatem eum."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "31",
+                            "body": "Totam vel reiciendis autem. Est quidem non accusantium id modi maxime. Voluptatem qui accusamus nihil voluptas omnis blanditiis consequatur officiis."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/7\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/7"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "8",
+            "attributes": {
+                "title": "Nesciunt explicabo voluptas aperiam. Corrupti aliquid velit veniam ullam voluptas repellendus sequi. Quis et voluptas quia sunt sit. Impedit rerum ut voluptatum et earum magni repellat?",
+                "description": "Et ut adipisci facere sed. Voluptas et et molestiae ipsam culpa illum reprehenderit. Corrupti non sed rerum natus in sapiente. Optio cum architecto optio pariatur. Unde reprehenderit blanditiis et est ea ut officiis. Maxime recusandae nobis libero adipisci atque. Eos ut aspernatur minima sed. Consequatur explicabo qui iste. Adipisci est nisi qui consectetur nihil. Maiores molestias voluptatem reprehenderit quae voluptate. Ut dolorem qui dignissimos."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "8",
+                            "body": "Et consequatur modi quo perferendis. Voluptatem vel fuga voluptas ipsa quia. Provident porro distinctio ut deleniti modi quae incidunt."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "13",
+                            "body": "Ullam iure veritatis aut et. Et ipsa sint soluta. Enim occaecati dignissimos suscipit sit magnam eos occaecati. Iste omnis commodi suscipit nihil voluptatem dolore."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "19",
+                            "body": "Error molestias omnis numquam natus molestiae eum. At et molestiae perferendis nihil. Exercitationem est suscipit animi eum sint consequatur aut. Debitis est earum beatae voluptate est atque dolorem."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "43",
+                            "body": "Eligendi animi minima nostrum distinctio. Accusantium numquam dolores quaerat nulla quis sit qui."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/8\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/8"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "9",
+            "attributes": {
+                "title": "Qui itaque rerum quis ab eos. Amet nisi vero inventore ex nemo sint sunt. Quo nesciunt soluta expedita rerum quae assumenda libero?",
+                "description": "Dolorem sit voluptatem est autem eveniet. Ipsam delectus perspiciatis sequi impedit. Animi voluptatem possimus iure. Saepe quia quo veniam voluptas quia hic. Vitae modi praesentium aut commodi. Sed soluta earum sunt fugiat consectetur delectus. Itaque non beatae beatae dolor quod."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "22",
+                            "body": "Deleniti rerum at quae nihil similique dolorem quaerat. Sit rerum autem aut labore. Cum quam voluptatem nihil ad mollitia."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "24",
+                            "body": "Odit repellendus dicta quo fugit. Sit architecto deleniti enim sit doloribus iste. Ex nulla et assumenda officia qui maiores autem sint."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "56",
+                            "body": "Ad doloribus quo sed perferendis. Ullam rerum ad maxime est eius. Nam amet sit ullam molestias nemo quas."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "57",
+                            "body": "Nulla quos eos et. Et eos fugiat aut modi est laudantium esse aut. Aut perferendis eos et quis. Quas voluptatibus sint delectus saepe velit."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/9\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/9"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "10",
+            "attributes": {
+                "title": "Dicta illo sunt optio nam. Odio id hic ut possimus eos velit. Qui numquam accusamus commodi nam fugit a minus. Rerum est quidem quae?",
+                "description": "Accusantium molestiae nesciunt quibusdam aspernatur pariatur qui quo maiores. Corrupti porro accusamus totam adipisci cumque sed aliquid earum. Ducimus alias autem qui incidunt. Qui eos ut odio reiciendis eos et aliquam ipsam. Et molestias qui corrupti numquam. Mollitia laborum nobis ex pariatur quia. Aliquam earum laboriosam totam deleniti ipsum at."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "25",
+                            "body": "Occaecati perspiciatis ipsam dicta eligendi iure. Atque corporis et dignissimos rerum. Quo pariatur sed officiis."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "29",
+                            "body": "Quibusdam error voluptas aperiam sunt eveniet veritatis sint occaecati. Aliquid omnis libero assumenda tempore sit nesciunt. Animi dolorem ut quisquam sint qui saepe."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "44",
+                            "body": "Placeat nesciunt provident dolorem eius eveniet cum. Consectetur ducimus excepturi enim aspernatur nemo consequuntur. Sit aut qui est nisi rerum porro. Maiores quo et cum aspernatur ut voluptatem."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "47",
+                            "body": "Illum possimus architecto adipisci illo reiciendis autem. Minus nam iure eveniet ex ratione eaque. Asperiores voluptas neque ut cupiditate. Quisquam ea ab dolorem nisi voluptas aliquam quia."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "49",
+                            "body": "Illum voluptas consectetur voluptatibus possimus. Eos dolores repudiandae et. Similique unde qui praesentium amet tempore. Ducimus et ex quia cupiditate occaecati est tempore."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/10\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/10"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "11",
+            "attributes": {
+                "title": "Amet reiciendis repudiandae ut. Vel molestiae beatae voluptas autem architecto itaque ipsa. Sapiente harum beatae praesentium architecto ipsam sed consequatur?",
+                "description": "Totam optio modi dicta quas. Possimus ut non a voluptatibus. Blanditiis occaecati nisi ut. Aspernatur culpa in laborum provident repudiandae voluptatem et voluptatem. Qui alias quaerat ducimus iusto. In possimus expedita reprehenderit animi. Rem magnam eligendi quo architecto dolorem. Vitae ea dolorum ut sint adipisci quidem. Eveniet et enim nihil. Dignissimos ad pariatur temporibus voluptatem illo. Autem esse cumque laborum unde dicta ipsa qui."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "6",
+                            "body": "Quam non reprehenderit dolor aut. Odit nulla ut exercitationem. Iusto doloremque sit tempora error quo."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "23",
+                            "body": "Omnis qui cumque exercitationem porro ea similique. Sint et quia distinctio labore ut."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "33",
+                            "body": "Fugit quas alias et reiciendis voluptatem. Hic eius eius ratione in in. Iste vero delectus consequatur rerum a. Repellat qui illo est ut."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "50",
+                            "body": "Dolor cupiditate magni consequuntur. Temporibus sed pariatur et sit officia. Nostrum qui ullam nobis aut natus. Aut quidem tempora omnis quos laboriosam."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "60",
+                            "body": "Animi dolorem doloremque asperiores esse. Occaecati quos qui et dicta. Atque ea voluptas odio."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/11\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/11"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "12",
+            "attributes": {
+                "title": "Excepturi repudiandae possimus repellendus perferendis. Molestiae qui dolores dolor ab. Qui enim temporibus quae similique quisquam minima illum?",
+                "description": "Dicta distinctio sit molestiae veniam harum. Neque voluptatem doloremque rerum ducimus asperiores eaque. Autem vitae est quibusdam distinctio. Vitae sint consequatur nihil voluptate tenetur esse explicabo. Iure esse facilis molestiae. Explicabo atque et cum et aut. Similique officiis distinctio tenetur suscipit rem."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "38",
+                            "body": "Fuga itaque et distinctio ut provident. Impedit totam neque ab et aliquam eaque rerum. Possimus accusantium similique aut ut quae. Iusto dolorem nostrum praesentium."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "39",
+                            "body": "Aut quidem inventore voluptatum quisquam. Sit sed facere eligendi delectus. Corrupti nostrum unde magnam sed. Minus nisi aut quasi unde dolorem."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "48",
+                            "body": "Tempore accusamus totam deserunt perspiciatis debitis dolorem ex et. Sequi dolores voluptatem voluptas et fugiat asperiores. Ipsam qui rerum nam."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "59",
+                            "body": "Ab iure quisquam quia quo praesentium molestias blanditiis. Commodi natus iure similique dolore non quia tempore. Ut in est autem molestiae numquam."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/12\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/12"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "13",
+            "attributes": {
+                "title": "Et omnis quasi quia omnis dignissimos perferendis. Qui dolorem modi iusto laudantium libero pariatur adipisci. Excepturi illo dolores nemo aliquid ut?",
+                "description": "Animi ipsa consequuntur non inventore corporis laborum. Quis enim iure in quod. Eveniet quia maxime aliquid blanditiis et. Labore quidem eos repellendus quisquam. Unde quod est quisquam. Vero quibusdam culpa pariatur autem. Quidem et animi repudiandae ut magnam at et explicabo."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "28",
+                            "body": "Culpa excepturi nihil quis dolorem et molestias. Et sit numquam laboriosam officiis voluptatibus. Unde velit iure voluptas nemo provident. Dolorem odio aliquam quas quia et."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "42",
+                            "body": "Magnam voluptatibus ea quo qui. Earum quae id est adipisci. Iure est debitis qui consequatur ea. Ea qui ducimus fugiat fugiat."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/13\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/13"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "14",
+            "attributes": {
+                "title": "Quos officia dolor repellendus dignissimos. Qui quia ducimus cum nam exercitationem perspiciatis. Et sed veritatis aut nam omnis?",
+                "description": "Quia sit reprehenderit nesciunt animi molestiae molestiae recusandae aperiam. Repellat in a sunt rem temporibus et eveniet. At accusamus praesentium voluptatem id quibusdam corrupti asperiores. Ut voluptatum nemo nesciunt excepturi modi accusamus. Et et in dicta commodi et sapiente cupiditate ex. Eos numquam voluptas veritatis beatae autem. Qui officia eum inventore aut nostrum ducimus ex quis. Est ut sed tempore vero facere."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [
+                        {
+                            "type": "answers",
+                            "id": "1",
+                            "body": "Est rerum quae neque ea non impedit velit. Deserunt sit illo sit quia eum dolore. Culpa culpa et accusantium commodi ratione."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "45",
+                            "body": "Dignissimos similique fugit enim quia. Molestiae omnis nesciunt voluptatum ea tenetur quia repudiandae. Voluptate ut distinctio totam corrupti dolores. Provident delectus velit quo."
+                        },
+                        {
+                            "type": "answers",
+                            "id": "58",
+                            "body": "Voluptate illum odit maxime sapiente similique alias. Necessitatibus aut illo minima qui eveniet."
+                        }
+                    ],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/14\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/14"
+            }
+        },
+        {
+            "type": "questions",
+            "id": "15",
+            "attributes": {
+                "title": "Non autem minima nihil voluptas incidunt ducimus omnis. Dignissimos voluptatum modi inventore. Ab sunt mollitia at ut quisquam. Ut omnis illum vitae mollitia perspiciatis ducimus?",
+                "description": "Et ea delectus ipsam accusamus perspiciatis animi quaerat et. Error vel odit occaecati doloremque reprehenderit tempore fugiat necessitatibus. Repellat dolore nemo sed ut. Mollitia accusamus ipsam ut velit saepe. Corporis corporis est voluptas molestiae et dolorum voluptatem itaque. Nemo voluptatem voluptatem dolor eaque ut modi. Exercitationem quo sed ipsum iure dolores. Eos modi dolor a dolores."
+            },
+            "relationships": {
+                "answers": {
+                    "data": [],
+                    "links": {
+                        "related": "http:\/\/localhost\/api\/questions\/15\/answers"
+                    }
+                }
+            },
+            "links": {
+                "self": "http:\/\/localhost\/api\/questions\/15"
+            }
+        }
+    ],
+    "links": {
+        "first": "http:\/\/localhost\/api\/questions?page=1",
+        "last": "http:\/\/localhost\/api\/questions?page=2",
+        "prev": null,
+        "next": "http:\/\/localhost\/api\/questions?page=2",
+        "self": "http:\/\/localhost\/api\/answers"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 2,
+        "path": "http:\/\/localhost\/api\/questions",
+        "per_page": 15,
+        "to": 15,
+        "total": 20
+    }
+}
+```
+
+### HTTP Request
+`GET api/questions`
+
+
+<!-- END_de9212b4bd813e07f73b53cc3bd13088 -->
+
+<!-- START_c523dae70f6c4b21420696974da0faea -->
+## Add question
+
+Add a new question
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/questions"     -d "title"="Why is this not working?" \
+    -d "description"="Ive done this and that this is still not working, what am I doint wrong?" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/questions",
+    "method": "POST",
+    "data": {
+        "title": "Why is this not working?",
+        "description": "Ive done this and that this is still not working, what am I doint wrong?"
+    },
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "questions",
+    "id": "21",
+    "attributes": {
+        "title": "Será que está tudo a funcionar?",
+        "description": "Descriçao aqui"
+    },
+    "relationships": {
+        "answers": {
+            "data": [],
+            "links": {
+                "self": "http:\/\/laravel.test\/api\/questions\/21\/relationships\/answers",
+                "related": "http:\/\/laravel.test\/api\/questions\/21\/answers"
+            }
+        }
+    },
+    "links": {
+        "self": "http:\/\/laravel.test\/api\/questions\/21"
+    }
+}
+```
+
+### HTTP Request
+`POST api/questions`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The question.
+    description | string |  optional  | Question explanation.
+
+<!-- END_c523dae70f6c4b21420696974da0faea -->
+
+<!-- START_f605dcf2ca92a58323db87f649ac1dae -->
+## Query question
+
+Query a question by Id
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/questions/{question}" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/questions/{question}",
+    "method": "GET",
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "questions",
+    "id": "1",
+    "attributes": {
+        "title": "Aut rerum numquam excepturi nam. Voluptas qui alias voluptatum blanditiis et. Expedita et nam repudiandae ipsa perspiciatis. Fuga tempore voluptas doloribus reiciendis?",
+        "description": "Fuga ut velit et autem. Qui fugit quo doloribus molestias vero et. Quisquam autem fugit dicta in doloremque ipsum explicabo. Iste sit delectus qui deleniti est. Occaecati accusantium minima sit pariatur. Ut sequi quaerat velit placeat quae reiciendis. Cupiditate ea ipsum aperiam amet magni repellendus. Molestias autem quasi vel repellendus eos autem ut qui. Odio vero est dolor dignissimos earum."
+    },
+    "relationships": {
+        "answers": {
+            "data": [
+                {
+                    "type": "answers",
+                    "id": "11",
+                    "body": "Dolores inventore consequatur quo. Dolorum libero cupiditate iste labore quae earum. Rerum et amet in."
+                },
+                {
+                    "type": "answers",
+                    "id": "30",
+                    "body": "Velit accusamus mollitia voluptatum iste eos. Qui et eum beatae eum dolores eum qui quisquam. Nihil omnis odio saepe itaque sint et. Cum tenetur labore est molestiae et beatae."
+                }
+            ],
+            "links": {
+                "related": "http:\/\/localhost\/api\/questions\/1\/answers"
+            }
+        }
+    },
+    "links": {
+        "self": "http:\/\/localhost\/api\/questions\/1"
+    }
+}
+```
+
+### HTTP Request
+`GET api/questions/{question}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
+<!-- END_f605dcf2ca92a58323db87f649ac1dae -->
+
+<!-- START_1bebccad423fb430073b434655c9df9e -->
+## Update question
+
+Update a question by Id
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/questions/{question}"     -d "title"="Why is this not working?" \
+    -d "description"="Ive done this and that this is still not working, what am I doint wrong?" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/questions/{question}",
+    "method": "PUT",
+    "data": {
+        "title": "Why is this not working?",
+        "description": "Ive done this and that this is still not working, what am I doint wrong?"
+    },
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "questions",
+    "id": "21",
+    "attributes": {
+        "title": "Será que está tudo a funcionar?",
+        "description": "Descriçao atualizada"
+    },
+    "relationships": {
+        "answers": {
+            "data": [],
+            "links": {
+                "self": "http:\/\/laravel.test\/api\/questions\/21\/relationships\/answers",
+                "related": "http:\/\/laravel.test\/api\/questions\/21\/answers"
+            }
+        }
+    },
+    "links": {
+        "self": "http:\/\/laravel.test\/api\/questions\/21"
+    }
+}
+```
+
+### HTTP Request
+`PUT api/questions/{question}`
+
+`PATCH api/questions/{question}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    title | string |  required  | The question.
+    description | string |  optional  | Question explanation.
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
+<!-- END_1bebccad423fb430073b434655c9df9e -->
+
+<!-- START_cb5299e7a9fce3c463c5f52278e9fae0 -->
+## Delete question
+
+Soft deletes the question adding a "deleted_at" value
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/questions/{question}" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/questions/{question}",
+    "method": "DELETE",
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "questions",
+    "id": "21",
+    "attributes": {
+        "title": "Será que está tudo a funcionar?",
+        "description": "Descriçao atualizada"
+    },
+    "relationships": {
+        "answers": {
+            "data": [],
+            "links": {
+                "self": "http:\/\/laravel.test\/api\/questions\/21\/relationships\/answers",
+                "related": "http:\/\/laravel.test\/api\/questions\/21\/answers"
+            }
+        }
+    },
+    "links": {
+        "self": "http:\/\/laravel.test\/api\/questions\/21"
+    }
+}
+```
+
+### HTTP Request
+`DELETE api/questions/{question}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
+<!-- END_cb5299e7a9fce3c463c5f52278e9fae0 -->
+
+<!-- START_ffba39ee142f0e0f3df7d5ab3a06906b -->
+## Query answers
+
+Get listing of answers paginated
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/answers" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/answers",
+    "method": "GET",
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "data": {
+        "data": [
+            {
+                "type": "answers",
+                "id": "1",
+                "attributes": {
+                    "body": "Est rerum quae neque ea non impedit velit. Deserunt sit illo sit quia eum dolore. Culpa culpa et accusantium commodi ratione."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/1"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "2",
+                "attributes": {
+                    "body": "Nulla libero temporibus iusto aut deleniti totam qui. Tempora est soluta quis earum enim. Architecto quo explicabo voluptas. Alias repellendus illo assumenda."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/2"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "3",
+                "attributes": {
+                    "body": "Velit velit perferendis qui. Harum iure deserunt sequi necessitatibus. Soluta fuga nobis aliquid et quam nihil totam. Voluptatem at laudantium et quidem. Sunt qui maiores voluptatem consequatur."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/3"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "4",
+                "attributes": {
+                    "body": "Eligendi delectus eius dolor laudantium est quia veritatis. Aut dolores aliquam pariatur minima. Ipsa ad ea et optio aut cumque."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/4"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "5",
+                "attributes": {
+                    "body": "Nobis laudantium dolorem nihil sunt ullam eveniet et. Qui sed ea in nesciunt ea praesentium est."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/5"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "6",
+                "attributes": {
+                    "body": "Quam non reprehenderit dolor aut. Odit nulla ut exercitationem. Iusto doloremque sit tempora error quo."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/6"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "7",
+                "attributes": {
+                    "body": "Omnis sequi cumque voluptatum quidem non dignissimos sed ab. Dolorum vel delectus ut fuga quasi earum. Numquam error ratione eveniet a ab magni quibusdam."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/7"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "8",
+                "attributes": {
+                    "body": "Et consequatur modi quo perferendis. Voluptatem vel fuga voluptas ipsa quia. Provident porro distinctio ut deleniti modi quae incidunt."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/8"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "9",
+                "attributes": {
+                    "body": "Repellendus sequi facilis est officia. In et quam est est aspernatur. Aut ipsam ut inventore velit."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/9"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "10",
+                "attributes": {
+                    "body": "Vel culpa commodi quia iure et. Ut impedit quisquam vitae molestiae praesentium libero. Delectus ea corporis atque voluptates modi molestiae. Officia voluptatem et magni voluptatibus voluptates."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/10"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "11",
+                "attributes": {
+                    "body": "Dolores inventore consequatur quo. Dolorum libero cupiditate iste labore quae earum. Rerum et amet in."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/11"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "12",
+                "attributes": {
+                    "body": "Nostrum dolor repellendus accusantium laudantium aut quos. Molestiae quisquam quam quasi ipsum iure aliquam facilis. Et excepturi illo id voluptatem."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/12"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "13",
+                "attributes": {
+                    "body": "Ullam iure veritatis aut et. Et ipsa sint soluta. Enim occaecati dignissimos suscipit sit magnam eos occaecati. Iste omnis commodi suscipit nihil voluptatem dolore."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/13"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "14",
+                "attributes": {
+                    "body": "Commodi deserunt vel et nemo. Et cumque ad omnis dolor sed ut dolores. Et ea explicabo tempora rem reiciendis. Et temporibus velit ipsa voluptatem."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/14"
+                }
+            },
+            {
+                "type": "answers",
+                "id": "15",
+                "attributes": {
+                    "body": "Iusto iusto et ut qui dolorum qui. Aut fuga porro in quo. Ut sit aspernatur reiciendis."
+                },
+                "links": {
+                    "self": "http:\/\/localhost\/api\/answers\/15"
+                }
+            }
+        ]
+    },
+    "links": {
+        "first": "http:\/\/localhost\/api\/answers?page=1",
+        "last": "http:\/\/localhost\/api\/answers?page=4",
+        "prev": null,
+        "next": "http:\/\/localhost\/api\/answers?page=2",
+        "self": "http:\/\/localhost\/api\/answers"
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 4,
+        "path": "http:\/\/localhost\/api\/answers",
+        "per_page": 15,
+        "to": 15,
+        "total": 59
+    }
+}
+```
+
+### HTTP Request
+`GET api/answers`
+
+
+<!-- END_ffba39ee142f0e0f3df7d5ab3a06906b -->
+
+<!-- START_aeead3cf8b0b117eaa7b8e3c88c7a800 -->
+## Add answer
+
+Add a new answer to a question
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/answers"     -d "question_id"="21" \
+    -d "body"="Its not working because you forgot the question_id parameter!" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/answers",
+    "method": "POST",
+    "data": {
+        "question_id": 21,
+        "body": "Its not working because you forgot the question_id parameter!"
+    },
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "questions",
+    "id": "24",
+    "attributes": {
+        "title": "Será que está tudo a funcionar?",
+        "description": "Descriçao atualizada"
+    },
+    "relationships": {
+        "answers": {
+            "data": [
+                {
+                    "type": "answers",
+                    "id": "67",
+                    "body": "Sim, parece estár tudo a funcionar!"
+                },
+                {
+                    "type": "answers",
+                    "id": "68",
+                    "body": "Em principio sim!"
+                }
+            ],
+            "links": {
+                "self": "http:\/\/laravel.test\/api\/questions\/24\/relationships\/answers",
+                "related": "http:\/\/laravel.test\/api\/questions\/24\/answers"
+            }
+        }
+    },
+    "links": {
+        "self": "http:\/\/laravel.test\/api\/questions\/24"
+    }
+}
+```
+
+### HTTP Request
+`POST api/answers`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    question_id | integer |  required  | The question id.
+    body | string |  optional  | Answer.
+
+<!-- END_aeead3cf8b0b117eaa7b8e3c88c7a800 -->
+
+<!-- START_2b390d72350a482fc19b0e8670afe9c4 -->
+## Query answer
+
+Query an answer by Id
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/answers/{answer}" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/answers/{answer}",
+    "method": "GET",
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "answers",
+    "id": "1",
+    "attributes": {
+        "body": "Est rerum quae neque ea non impedit velit. Deserunt sit illo sit quia eum dolore. Culpa culpa et accusantium commodi ratione."
+    },
+    "links": {
+        "self": "http:\/\/localhost\/api\/answers\/1"
+    }
+}
+```
+
+### HTTP Request
+`GET api/answers/{answer}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    answer |  optional  | int required The answer id.
+
+<!-- END_2b390d72350a482fc19b0e8670afe9c4 -->
+
+<!-- START_09fd9e8518c9b604d36eb4242512829d -->
+## Update answer
+
+Update an answer by Id
+
+> Example request:
+
+```bash
+curl -X PUT "http://localhost/api/answers/{answer}"     -d "body"="Its not working because you forgot the question_id parameter!" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/answers/{answer}",
+    "method": "PUT",
+    "data": {
+        "body": "Its not working because you forgot the question_id parameter!"
+    },
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "answers",
+    "id": "20",
+    "attributes": {
+        "body": "Esqueceste-te do ponto e virgula!"
+    },
+    "links": {
+        "self": "http:\/\/laravel.test\/api\/answers\/20"
+    }
+}
+```
+
+### HTTP Request
+`PUT api/answers/{answer}`
+
+`PATCH api/answers/{answer}`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    body | string |  optional  | Answer.
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    answer |  optional  | int required The answers id.
+
+<!-- END_09fd9e8518c9b604d36eb4242512829d -->
+
+<!-- START_c04468caefc10a779cf1380faeb8d92c -->
+## Delete answer
+
+Soft deletes the answer adding a "deleted_at", the deleted answer is sent.
+
+> Example request:
+
+```bash
+curl -X DELETE "http://localhost/api/answers/{answer}" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/answers/{answer}",
+    "method": "DELETE",
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "type": "answers",
+    "id": "30",
+    "attributes": {
+        "body": "Afinal, não sei bem!"
+    },
+    "links": {
+        "self": "http:\/\/laravel.test\/api\/answers\/68"
+    }
+}
+```
+
+### HTTP Request
+`DELETE api/answers/{answer}`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    answer |  optional  | int required The answers id.
+
+<!-- END_c04468caefc10a779cf1380faeb8d92c -->
+
+<!-- START_c62321bd8a21519aef8cb5053dbcda11 -->
+## Query answers by question
+
+Get all answers for a specific question
+
+> Example request:
+
+```bash
+curl -X GET -G "http://localhost/api/questions/{question}/answers" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/questions/{question}/answers",
+    "method": "GET",
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+{
+    "data": [
+        {
+            "type": "answers",
+            "id": "27",
+            "attributes": {
+                "body": "Natus officiis voluptatem enim corporis soluta maxime. Dicta velit beatae aspernatur. Aut sit dignissimos quaerat porro asperiores. Eveniet rem dolore quia sit."
+            },
+            "links": {
+                "self": "http:\/\/laravel.test\/api\/answers\/27"
+            }
+        },
+        {
+            "type": "answers",
+            "id": "36",
+            "attributes": {
+                "body": "Reprehenderit quidem et sit ad ipsam. Est deserunt quo et quia incidunt iusto. Quia ut rerum iusto inventore natus doloremque et alias. Quis et ut natus."
+            },
+            "links": {
+                "self": "http:\/\/laravel.test\/api\/answers\/36"
+            }
+        },
+        {
+            "type": "answers",
+            "id": "52",
+            "attributes": {
+                "body": "Excepturi ipsa mollitia est facilis. Sed reprehenderit expedita impedit ducimus ratione id enim. Ducimus porro aut vel voluptas qui porro. Velit non tenetur quae necessitatibus quibusdam quis."
+            },
+            "links": {
+                "self": "http:\/\/laravel.test\/api\/answers\/52"
+            }
+        }
+    ],
+    "links": {
+        "self": "http:\/\/laravel.test\/api\/answers"
+    }
+}
+```
+
+### HTTP Request
+`GET api/questions/{question}/answers`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    question |  optional  | int required The questions id.
+
+<!-- END_c62321bd8a21519aef8cb5053dbcda11 -->
+
+<!-- START_6e7e2bdf41dacf38a5c6768ef817e8b6 -->
+## Upload picture
+
+Very basic picture upload
+
+Image gets replaced always, and is accessible at 'storage/uploadedPic.png'
+Png only (Client side verification)
+
+> Example request:
+
+```bash
+curl -X POST "http://localhost/api/upload"     -d "picture"="Vr3wGThvyRa2N7OQ" 
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://localhost/api/upload",
+    "method": "POST",
+    "data": {
+        "picture": "Vr3wGThvyRa2N7OQ"
+    },
+    "headers": {
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+
+### HTTP Request
+`POST api/upload`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    picture | multipart/form-data |  optional  | 
+
+<!-- END_6e7e2bdf41dacf38a5c6768ef817e8b6 -->
+
+
